@@ -2,10 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Welcome to the Wikipedia Search</title>
+    <title>Dynamic Wikipedia Search</title>
   </head>
-  <body>
-    <h1>Take-Home Assignment for Axuall Hiring Candidacy</h1>
-    <p> Flask is Fun </p>
-  </body>
+
+{% extends "layout.html" %}
+{% block content %}
+  <div class="home">
+    <h1>Wiki-Search</h1>
+    <p>Take-Home Assignment for Axuall Hiring Candidacy</p>
+    <p> Objective: Create a web app that incorporates the search term - inputted by the user - into the dynamic url </p>
+
+  <form action="/form/submit" method="GET"> 
+    <input type="text" name="text" class="search" placeholder="Search here!">
+    <input type="submit" name="submit" class="submit" value="Search">
+  </form>
+  </div>
+{% endblock %}
+
 </html>
