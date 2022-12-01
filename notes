@@ -1,0 +1,27 @@
+from flask import Flask, render_template, request, url_for
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+    # Due to the route decorator, prompt function, and wiki-search module, could not get home.html into script without overriding the prompt's return statement.
+    # Thus, the page has no layout or styling :(
+
+    # Played around with trying to prompt user for input via a form on the landing page.
+
+@app.route('/', methods = ["GET", "POST"])
+def search():
+    if request.method == "POST":
+        search_term = request.form.get("searchTerm")
+        return render_template("form.html")
+
+# @app.route('/', subdomain = input(__))
+
+# gets search term from user input from home search bar
+# uses python input() method 
+        # search_word = input('Search here!') --> or is there a different way to take the form input and insert it into the input()?
+    # validates form input/data using WTForms (works with Flask)
+    # assigns variable name to input as wildcard string literal?
+    # takes user input (variable) and adds to next function/step
+# inserts variable in app.route to make call (GET) using that endpoint (use CLI cURL to test)

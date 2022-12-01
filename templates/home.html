@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Dynamic Wikipedia Search</title>
-  </head>
-
-{% extends "layout.html" %}
-{% block content %}
-  <div class="home">
-    <h1>Wiki-Search</h1>
-    <p>Take-Home Assignment for Axuall Hiring Candidacy</p>
-    <p> Objective: Create a web app that incorporates the search term - inputted by the user - into the dynamic url </p>
-
-  <form action="/form/submit" method="GET"> 
-    <input type="text" name="text" class="search" placeholder="Search here!">
-    <input type="submit" name="submit" class="submit" value="Search">
-  </form>
-  </div>
-{% endblock %}
+    <head>
+        <meta charset="utf-8">
+        <title>Wikipedia Search</title>
+    </head>
+    <body>
+    {% extends "layout.html" %}
+    <div class = "home">
+        <h1>Dynamic Wikipedia Search</h1>
+            <br>
+	        <form action ="/form/submit" method="POST">
+                <label for="searchTerm">Welcome! Please enter the term you would like to search for in the following URL >>> http://127.0.0.1:5000/[YOUR SEARCH TERM].wiki-search.com</label>
+                <input type="text" name="searchTerm" class="search" placeholder="Search here">
+                <button type="submit">Submit</button>
+            </form>
+    </div>
+</body>
 
 </html>
